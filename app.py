@@ -32,7 +32,8 @@ def pasang_visual_tema(bg, card, border, glow, mode_animasi="listrik_biru"):
             transition: all 0.5s ease-in-out;
         }}
         
-        #MainMenu, footer, header {{
+        /* 🔥 TOMBOL AMAN: Cuma hapus MainMenu sama Footer, Header tetep hidup biar tombol menu gak ilang! */
+        #MainMenu, footer {{
             visibility: hidden !important;
         }}
         
@@ -147,7 +148,6 @@ def pasang_visual_tema(bg, card, border, glow, mode_animasi="listrik_biru"):
             
             /* Sembunyikan sebagian partikel di HP agar tidak mengganggu bacaan */
             .col-1, .col-5 {{ display: none !important; }}
-            .bg-canvas [style*="top: 75%"], .bg-canvas [style*="top: 80%"] {{ display: none !important; }}
         }}
         </style>
     """, unsafe_allow_html=True)
@@ -190,7 +190,6 @@ def pasang_visual_tema(bg, card, border, glow, mode_animasi="listrik_biru"):
         """, unsafe_allow_html=True)
         
     elif mode_animasi == "kapasitor_cyan":
-        # DIKUNCI ANTI-BOCOR: Tanda kutip dibersihkan total dari inline style agar aman di mobile & desktop
         st.markdown(f"""
             <div class="bg-canvas">
                 <div class="partikel-umum col-2" style="width:30px; height:6px; border-radius:2px; bottom:-50px; animation: naikVertikal 16s infinite linear;"></div>
